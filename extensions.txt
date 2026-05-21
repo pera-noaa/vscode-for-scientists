@@ -1,0 +1,57 @@
+# Extensions used in the workshop.
+#
+# Install all with:
+#     xargs -L 1 code --install-extension < extensions.txt
+#
+# Lines starting with '#' are comments and are skipped by --install-extension
+# if you grep them out first:
+#     grep -v '^#' extensions.txt | xargs -L 1 code --install-extension
+#
+# Some extensions are NOT on Open VSX (the marketplace used by OpenOnDemand
+# Code Server). Those are marked [MS-only]; OOD users skip them and use the
+# OSS alternatives noted in setup/msu-ood-walkthrough.md.
+
+# --- Remote development ---
+ms-vscode-remote.remote-ssh
+
+# --- Python ---
+ms-python.python
+ms-python.vscode-pylance              # [MS-only] — OOD users: install 'ms-pyright.pyright' instead
+ms-toolsai.jupyter
+charliermarsh.ruff
+ms-python.debugpy
+
+# --- Fortran ---
+fortran-lang.linter-gfortran          # Modern Fortran (LSP-backed)
+
+# --- IDL ---
+idl.idl-for-vscode                    # IDL for VSCode (Harris Geospatial)
+
+# --- Git ---
+eamodio.gitlens
+github.vscode-pull-request-github
+
+# --- Scientific data ---
+h5web.vscode-h5web                    # netCDF / HDF5 viewer
+mechatroner.rainbow-csv               # CSV viewer with column highlighting
+
+# --- LaTeX ---
+james-yu.latex-workshop
+
+# --- Markdown ---
+yzhang.markdown-all-in-one
+bierner.markdown-mermaid
+
+# --- Editor / writing ---
+streetsidesoftware.code-spell-checker
+editorconfig.editorconfig
+gruntfuggly.todo-tree
+
+# --- AI assist (pick one or more) ---
+# googlecloudtools.cloudcode          # Includes Gemini Code Assist — lab default
+# github.copilot                      # GitHub Copilot — free tier for everyone, full free for CIRES/CU
+# continue.continue                   # Continue.dev — bring-your-own-key
+
+# --- Optional but nice ---
+ms-vscode.live-server                 # quick HTTP server for previewing HTML
+mhutchie.git-graph                    # visual git history
