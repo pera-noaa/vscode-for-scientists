@@ -1,0 +1,71 @@
+# ~/.ssh/config examples
+#
+# Copy the relevant block into your own ~/.ssh/config (create it if missing).
+# After editing, set permissions:
+#     chmod 600 ~/.ssh/config
+#
+# Test with: ssh <Host>
+
+
+# ---- Basic: nimbus (or any plain HPC host) ----
+# Use this when the host is on the public internet (or you're on VPN) and
+# accepts public-key authentication directly.
+
+Host nimbus
+    HostName nimbus.example.org
+    User your_username
+    IdentityFile ~/.ssh/id_ed25519
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+
+
+# ---- Via a jump host (bastion) ----
+# Two-hop: laptop -> bastion -> internal compute host. The ProxyJump directive
+# makes ssh transparent ("ssh internal" goes through bastion automatically).
+
+Host bastion
+    HostName bastion.example.org
+    User your_username
+    IdentityFile ~/.ssh/id_ed25519
+
+Host internal
+    HostName internal-host.internal.example.org
+    User your_username
+    IdentityFile ~/.ssh/id_ed25519
+    ProxyJump bastion
+    ServerAliveInterval 60
+
+
+# ---- Non-standard port ----
+# Some HPC clusters expose SSH on a port other than 22.
+
+Host weirdport
+    HostName weirdport.example.org
+    User your_username
+    Port 2222
+    IdentityFile ~/.ssh/id_ed25519
+
+
+# ---- ControlMaster for fast reconnects ----
+# Reuses an existing SSH connection so subsequent `ssh` (or VSCode Remote-SSH)
+# avoids re-doing auth and Duo. Saves time when opening many terminals.
+# IMPORTANT: ~/.ssh/controlmasters/ must exist (mkdir -p ~/.ssh/controlmasters
+# && chmod 700 ~/.ssh/controlmasters).
+
+Host shared-cluster
+    HostName shared-cluster.example.org
+    User your_username
+    IdentityFile ~/.ssh/id_ed25519
+    ControlMaster auto
+    ControlPath ~/.ssh/controlmasters/%r@%h:%p
+    ControlPersist 1h
+
+
+# ---- Wildcard defaults ----
+# Apply settings to ALL hosts. Put this at the end of the file.
+
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes              # macOS only; integrates with Keychain
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
