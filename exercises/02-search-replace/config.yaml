@@ -1,0 +1,14 @@
+project: phoenix-prototype
+version: 0.4.2
+owner: ashley.pera@example.org
+
+paths:
+  inputs: /home/old_user/data/inputs
+  outputs: /home/old_user/data/outputs
+
+modules:
+  - phoenix-prototype.io
+  - phoenix-prototype.calibration
+  - phoenix-prototype.export
+
+# Project rename pending — phoenix-prototype -> aurora-v2
