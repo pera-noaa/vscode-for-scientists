@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+
+\title{A Minimal Calibration Paper Skeleton}
+\author{Workshop Attendee \\ \texttt{you@example.org}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is a placeholder abstract for the LaTeX exercise. It describes the
+synthetic instrument-calibration workflow used elsewhere in this workshop
+repository, with just enough scaffolding to demonstrate citations,
+cross-references, equations, and figures.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Modern atmospheric instruments require careful per-channel calibration to
+remove systematic offsets and scale factors~\cite{anderson2024calibration}.
+Recent work has emphasized robust statistical methods for combining
+calibration constants across multiple deployments~\cite{nguyen2023robust}.
+
+In this paper we describe a simple linear calibration applied to a
+three-channel synthetic dataset, demonstrating the workflow used by the
+VSCode workshop exercises.
+
+\section{Methods}
+\label{sec:methods}
+
+For each observation, the calibrated value $y$ is obtained from the raw
+value $x$ via the per-channel linear transform
+\begin{equation}
+    y_c = s_c \, x_c + o_c,
+    \label{eq:calibration}
+\end{equation}
+where $s_c$ and $o_c$ are the slope and offset for channel $c$.
+
+Summary statistics over the calibrated dataset $\{y_i\}_{i=1}^{N}$ are
+computed as the mean, minimum, and maximum:
+\begin{align}
+    \bar{y} &= \frac{1}{N} \sum_{i=1}^{N} y_i, \\
+    y_{\min} &= \min_i y_i, \\
+    y_{\max} &= \max_i y_i.
+\end{align}
+
+\section{Results}
+\label{sec:results}
+
+Figure~\ref{fig:calibration} shows the raw and calibrated distributions
+side-by-side. Cross-reference: see Section~\ref{sec:methods} for the
+underlying formula (Equation~\ref{eq:calibration}).
+
+\begin{figure}[h]
+    \centering
+    % To make this render, drop a real PNG in this folder and point at it.
+    % e.g. ../05-jupyter/calibration_plot.png (after running the notebook)
+    \fbox{\rule{0pt}{6em}\rule{12em}{0pt}\textit{[figure placeholder]}}
+    \caption{Raw versus calibrated distributions for three channels.}
+    \label{fig:calibration}
+\end{figure}
+
+\section{Discussion}
+\label{sec:discussion}
+
+The linear calibration of Section~\ref{sec:methods} is sufficient for the
+synthetic case here, but real instruments often require higher-order or
+piecewise corrections.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
