@@ -39,7 +39,7 @@ If you see an error, see [`setup/troubleshooting.md`](setup/troubleshooting.md).
 In the VSCode integrated terminal (Ctrl+\`) — which is now running on the remote — clone the repo into your home directory:
 
 ```
-git clone <WORKSHOP-REPO-URL> ~/vscode-workshop
+git clone https://github.com/pera-noaa/vscode-for-scientists.git ~/vscode-workshop
 ```
 
 Then File → Open Folder → `~/vscode-workshop`.
@@ -68,7 +68,7 @@ Steps 2–6 are different. MSU forbids Remote-SSH; use OpenOnDemand instead.
 4. When the job starts, click "Connect" to open browser-based VSCode.
 5. Open a terminal in that VSCode (Ctrl+\`) and clone the workshop repo:
    ```
-   git clone <WORKSHOP-REPO-URL> ~/vscode-workshop
+   git clone https://github.com/pera-noaa/vscode-for-scientists.git ~/vscode-workshop
    ```
 6. Open the folder via the VSCode UI: File → Open Folder → `~/vscode-workshop`.
 7. Post status in the workshop channel.

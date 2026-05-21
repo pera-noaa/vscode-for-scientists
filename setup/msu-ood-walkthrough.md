@@ -28,7 +28,7 @@ When the status is "Running," click **Connect to Code Server**. A new browser ta
 - You're on a compute node with access to your `$HOME` and group filesystems.
 - Clone:
   ```
-  git clone <WORKSHOP-REPO-URL> ~/vscode-workshop
+  git clone https://github.com/pera-noaa/vscode-for-scientists.git ~/vscode-workshop
   ```
 - File → Open Folder → `~/vscode-workshop`.
 
