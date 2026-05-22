@@ -62,8 +62,8 @@ What makes it relevant to a scientific lab:
 | 0:15–0:20 | **First contact** — UI tour: file tree, editor, terminal, status bar, command palette as the M-x analog. | — |
 | 0:20–0:30 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [10](exercises/10-ruff-magic/) |
 | 0:30–0:45 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [01](exercises/01-navigation/), [02](exercises/02-search-replace/) |
-| 0:45–0:55 | **Git** — visual hunk staging, inline blame. | [03](exercises/03-git/) |
-| 0:55–1:05 | **Scientific data** — open a CSV with Rainbow CSV, open a netCDF with H5Web (graphical browser inside the editor). Replaces `ncdump \| less` for the everyday "what's in this file?" check. | [08](exercises/08-scientific-data/) |
+| 0:45–0:55 | **Scientific data** — open a CSV with Rainbow CSV, open a netCDF with H5Web (graphical browser inside the editor). Replaces `ncdump \| less` for the everyday "what's in this file?" check. | [08](exercises/08-scientific-data/) |
+| 0:55–1:05 | **Git** — visual hunk staging, inline blame. | [03](exercises/03-git/) |
 | 1:05–1:10 | **Wrap** — cheatsheet, self-study pointers (debugger, notebooks, Fortran, IDL, LaTeX, AI), Q&A. | — |
 
 Block 0 is real working time — SSH first-connects take real minutes. Designating 1–2 **helpers** to walk around during Block 0 and triage broken SSH configs makes the difference between starting on time and starting 15 minutes late.
