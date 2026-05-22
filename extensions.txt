@@ -14,6 +14,10 @@
 # --- Remote development ---
 ms-vscode-remote.remote-ssh
 
+# --- Scientific data ---
+h5web.vscode-h5web                    # netCDF / HDF5 viewer
+mechatroner.rainbow-csv               # CSV viewer with column highlighting
+
 # --- Python ---
 ms-python.python
 ms-python.vscode-pylance              # [MS-only] — OOD users: install 'ms-pyright.pyright' instead
@@ -30,10 +34,6 @@ idl.idl-for-vscode                    # IDL for VSCode (Harris Geospatial)
 # --- Git ---
 eamodio.gitlens
 github.vscode-pull-request-github
-
-# --- Scientific data ---
-h5web.vscode-h5web                    # netCDF / HDF5 viewer
-mechatroner.rainbow-csv               # CSV viewer with column highlighting
 
 # --- LaTeX ---
 james-yu.latex-workshop
