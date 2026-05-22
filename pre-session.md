@@ -33,8 +33,6 @@ That's all of Part 1. If you already had VSCode and Remote-SSH, you're done with
 
 ## Part 2 — Block 0 (15 min, together)
 
-The instructor walks through these steps on the projector; you follow along on your laptop. If you fall behind, raise a hand — there are 1–2 helpers in the room for triage.
-
 ### 3. Quick sanity-check: does plain SSH work?
 Before involving VSCode, confirm plain SSH works from your terminal:
 
