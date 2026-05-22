@@ -5,7 +5,7 @@ Goal: stop print-statement-debugging. Use a breakpoint and the Variables panel.
 You'll work with `buggy_calibration.py`, a small script with a planted bug somewhere. It runs without error, but the reported mean is wrong (it prints the expected value at the bottom — they don't match).
 
 ## Setup
-- Open `exercises/04-debugging/buggy_calibration.py`.
+- Open `self-study/04-debugging/buggy_calibration.py`.
 - Make sure the Python extension is installed and a Python interpreter is selected (status bar, bottom-right).
 
 ## Exercises
