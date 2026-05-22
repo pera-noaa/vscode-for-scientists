@@ -1,4 +1,4 @@
-# Exercise 01 — Code Navigation
+# Exercise 02 — Code Navigation
 
 Goal: replace `grep -r` + manual file-jumping with F12 and Shift+F12.
 
@@ -54,7 +54,7 @@ You'll work with a tiny three-file Python package that simulates an instrument-c
 ## Try this without VSCode for comparison
 On the command line:
 ```
-grep -rn 'load_raw_data' exercises/01-navigation/
+grep -rn 'load_raw_data' exercises/02-navigation/
 ```
 That's the slow path. F12 / Shift+F12 do the same thing without leaving the editor.
 
@@ -62,4 +62,4 @@ That's the slow path. F12 / Shift+F12 do the same thing without leaving the edit
 Navigation depends on the Python language server (Pylance, or Pyright on OOD). If F12 does nothing:
 - Check bottom-right status bar: a Python interpreter must be selected.
 - If you see "Loading…" in the status bar, wait — Pylance is still indexing.
-- For Fortran navigation, the same shortcuts work via the Modern Fortran extension (see exercise 06).
+- For Fortran navigation, the same shortcuts work via the Modern Fortran extension (see `self-study/03-fortran/`).

@@ -1,4 +1,4 @@
-# Exercise 02 — Search and Replace at Scale
+# Exercise 03 — Search and Replace at Scale
 
 Goal: replace `grep -rn | xargs sed -i` with the workspace search panel.
 
@@ -54,7 +54,7 @@ You'll search across a small mixed-content tree containing Python, YAML, Markdow
 
 ## Try this without VSCode for comparison
 ```
-grep -rn 'TODO\|FIXME\|XXX' exercises/02-search-replace/ --include='*.py'
+grep -rn 'TODO\|FIXME\|XXX' exercises/03-search-replace/ --include='*.py'
 ```
 Same result, no preview, no interactive untick, no in-place rename. VSCode's panel is the same `ripgrep` under the hood — it's just wrapped in a useful UI.
 

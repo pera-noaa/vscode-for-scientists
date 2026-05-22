@@ -1,4 +1,4 @@
-# Exercise 08 — Viewing Scientific Data
+# Exercise 04 — Viewing Scientific Data
 
 Goal: load → inspect → visualize scientific data without leaving the editor or writing throwaway code. The full loop — raw CSV, structured netCDF, and the rendered plot — happens inside one VSCode window, on the HPC.
 
@@ -61,9 +61,9 @@ Install these extensions (in `extensions.txt`):
 - **Data Wrangler**: serious data exploration (filter chains, summary stats, "show me the rows where X > Y"). Generates pandas code you can paste into a notebook.
 - **H5Web**: anything netCDF / HDF5. Replaces `ncdump | less` and `ncview` for a quick visual check.
 - **Built-in image viewer**: click any `.png`, `.svg`, `.jpg`, `.gif` and it renders. PDF needs an extension. Replaces "scp to laptop then open."
-- **Notebook (exercise 05)**: when you need full numpy / xarray analysis and plotting in code.
+- **Notebook (`self-study/02-jupyter/`)**: when you need full numpy / xarray analysis and plotting in code.
 
 ## Tips
 - For large CSV (millions of rows), Rainbow CSV may slow down. Use `csvlens` from the terminal as a fast alternative, or load into a notebook with pandas / polars.
 - H5Web respects netCDF conventions — CF-compliant files render coordinate axes correctly.
-- The Variables panel in a Jupyter notebook (exercise 05) is the same idea applied to in-memory data — `H5Web` for files, Variables panel for live objects.
+- The Variables panel in a Jupyter notebook (`self-study/02-jupyter/`) is the same idea applied to in-memory data — `H5Web` for files, Variables panel for live objects.

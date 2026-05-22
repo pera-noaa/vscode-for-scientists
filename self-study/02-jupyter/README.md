@@ -1,4 +1,4 @@
-# Exercise 05 — Jupyter Notebooks in VSCode
+# Exercise 02 — Jupyter Notebooks in VSCode
 
 Goal: use a notebook like you would in JupyterLab, but get the bonus features (variable explorer, sane git diffs, cell-by-cell debugging) that VSCode adds.
 

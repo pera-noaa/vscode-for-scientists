@@ -1,4 +1,4 @@
-# Exercise 09 — LaTeX with Live Preview
+# Exercise 05 — LaTeX with Live Preview
 
 Goal: write a paper with the PDF preview rendering in real time, citations autocompleting, and forward/inverse search between source and PDF.
 

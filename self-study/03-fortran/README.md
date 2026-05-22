@@ -1,6 +1,6 @@
-# Exercise 06 — Navigating Fortran
+# Exercise 03 — Navigating Fortran
 
-Goal: see that F12 / Shift+F12 / F2 / multi-cursor work for Fortran the same way they did for Python in exercise 01.
+Goal: see that F12 / Shift+F12 / F2 / multi-cursor work for Fortran the same way they did for Python in `exercises/02-navigation/`.
 
 For TM5-scale codebases (hundreds of files, thousands of subroutines), this is the single biggest reason to use VSCode.
 

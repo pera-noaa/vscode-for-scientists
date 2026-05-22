@@ -1,4 +1,4 @@
-# Exercise 10 — The Magic Save
+# Exercise 01 — The Magic Save
 
 Goal: the "good defaults already exist" pitch, demonstrated in 30 seconds.
 

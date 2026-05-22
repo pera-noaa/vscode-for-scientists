@@ -1,4 +1,4 @@
-# Exercise 03 — Visual Hunk Staging
+# Exercise 05 — Visual Hunk Staging
 
 Goal: stop running `git add -p` blindly. Stage by clicking individual hunks (or even individual lines) in the diff gutter.
 
@@ -8,12 +8,12 @@ You'll work in a fresh tiny sub-repo with three dirty files. Each file has multi
 From the workshop repo root, run:
 
 ```
-bash exercises/03-git/setup.sh
+bash exercises/05-git/setup.sh
 ```
 
-This creates `exercises/03-git/exercise-repo/` — a small git repo with one committed baseline and three modified files containing multi-hunk changes.
+This creates `exercises/05-git/exercise-repo/` — a small git repo with one committed baseline and three modified files containing multi-hunk changes.
 
-Open the sub-repo: File → Open Folder → `exercises/03-git/exercise-repo/`.
+Open the sub-repo: File → Open Folder → `exercises/05-git/exercise-repo/`.
 
 (If you re-run the setup script, it wipes and recreates the sub-repo so you can redo the exercise from scratch.)
 

@@ -1,6 +1,6 @@
-# Exercise 07 — Navigating IDL
+# Exercise 04 — Navigating IDL
 
-Goal: same as exercises 01 and 06, but for IDL. Cross-procedure navigation, multi-cursor, rename — works the same once the IDL extension is installed.
+Goal: same as `exercises/02-navigation/` (Python) and `self-study/03-fortran/`, but for IDL. Cross-procedure navigation, multi-cursor, rename — works the same once the IDL extension is installed.
 
 ## Setup
 - Install the **IDL for VSCode** extension (`idl.idl-for-vscode`, by Harris Geospatial). It's in `extensions.txt`.

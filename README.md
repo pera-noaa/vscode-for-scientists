@@ -37,18 +37,18 @@ What makes it relevant to a scientific lab:
 ├── extensions.txt           # `code --install-extension`-able list
 ├── settings.example.json    # sensible defaults for User Settings JSON
 ├── setup/                   # SSH config examples, verify.sh, troubleshooting, OOD walkthrough
-├── exercises/               # hands-on exercises done in the live session
-│   ├── 01-navigation/       # F12 / Shift+F12 / F2 / multi-cursor
-│   ├── 02-search-replace/   # Cmd+Shift+F across the workspace
-│   ├── 03-git/              # visual hunk staging
-│   ├── 08-scientific-data/  # netCDF / HDF5 / CSV viewers
-│   └── 10-ruff-magic/       # the "magic save" — ruff fixes on Cmd+S
+├── exercises/               # hands-on exercises done in the live session (in order)
+│   ├── 01-ruff-magic/       # the "magic save" — ruff fixes on Cmd+S
+│   ├── 02-navigation/       # F12 / Shift+F12 / F2 / multi-cursor
+│   ├── 03-search-replace/   # Cmd+Shift+F across the workspace
+│   ├── 04-scientific-data/  # netCDF / HDF5 / CSV / PNG viewers
+│   └── 05-git/              # visual hunk staging
 └── self-study/              # take-home exercises and reference docs
-    ├── 04-debugging/        # breakpoints, variable inspection (Python)
-    ├── 05-jupyter/          # notebooks with variable explorer
-    ├── 06-fortran/          # navigation in Fortran
-    ├── 07-idl/              # navigation in IDL
-    ├── 09-latex/            # LaTeX live preview
+    ├── 01-debugging/        # breakpoints, variable inspection (Python)
+    ├── 02-jupyter/          # notebooks with variable explorer
+    ├── 03-fortran/          # navigation in Fortran
+    ├── 04-idl/              # navigation in IDL
+    ├── 05-latex/            # LaTeX live preview
     ├── adjacent-tools.md    # CLI tools worth knowing (ruff, uv, fzf, tmux…)
     ├── ai-assistants.md     # Gemini, Copilot, BYO-key in depth
     └── customization.md     # emacs keymap, profiles, settings sync
@@ -60,13 +60,13 @@ What makes it relevant to a scientific lab:
 |---|---|---|
 | 0:00–0:15 | **Block 0 — Setup together** — verify SSH from terminal, clone the workshop repo locally, run `verify.sh`, connect via Remote-SSH, clone the repo on the remote, confirm with `hostname`. Walk through [`pre-session.md`](pre-session.md) Part 2 step-by-step on the projector. MSU users follow [`setup/msu-ood-walkthrough.md`](setup/msu-ood-walkthrough.md) in parallel. | — |
 | 0:15–0:20 | **First contact** — UI tour: file tree, editor, terminal (Ctrl+\` — already on the remote you just connected to; `ls` shows your HPC home, `hostname` confirms it), status bar, command palette as the M-x analog. The "this is what replaces PuTTY" moment. | — |
-| 0:20–0:30 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [10](exercises/10-ruff-magic/) |
-| 0:30–0:45 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [01](exercises/01-navigation/), [02](exercises/02-search-replace/) |
-| 0:45–0:55 | **Scientific data** — open a CSV with Rainbow CSV, open a netCDF with H5Web (graphical browser inside the editor), click on a PNG sitting on the HPC and watch it render in a tab — no `scp` needed. Replaces `ncdump \| less` and the "copy plot to laptop to look at it" workflow. | [08](exercises/08-scientific-data/) |
-| 0:55–1:05 | **Git** — visual hunk staging, inline blame. | [03](exercises/03-git/) |
+| 0:20–0:30 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [01](exercises/01-ruff-magic/) |
+| 0:30–0:45 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [02](exercises/02-navigation/), [03](exercises/03-search-replace/) |
+| 0:45–0:55 | **Scientific data** — open a CSV with Rainbow CSV, open a netCDF with H5Web (graphical browser inside the editor), click on a PNG sitting on the HPC and watch it render in a tab — no `scp` needed. Replaces `ncdump \| less` and the "copy plot to laptop to look at it" workflow. | [04](exercises/04-scientific-data/) |
+| 0:55–1:05 | **Git** — visual hunk staging, inline blame. | [05](exercises/05-git/) |
 | 1:05–1:10 | **Wrap** — cheatsheet, self-study pointers (debugger, notebooks, Fortran, IDL, LaTeX, AI), Q&A. | — |
 
-**Self-study exercises** all live under [`self-study/`](self-study/). Debugger (04) and notebooks (05) extend the live arc with Python-daily features that wouldn't fit in 70 minutes. Fortran (06), IDL (07), and LaTeX (09) are language- and format-specific re-runs of the navigation and preview exercises — anyone whose daily work involves those will want to do them on their own time. The mechanics are the same; only the languages and tools change.
+**Self-study exercises** all live under [`self-study/`](self-study/). Debugger (01) and notebooks (02) extend the live arc with Python-daily features that wouldn't fit in 70 minutes. Fortran (03), IDL (04), and LaTeX (05) are language- and format-specific re-runs of the navigation and preview exercises — anyone whose daily work involves those will want to do them on their own time. The mechanics are the same; only the languages and tools change.
 
 ## The three-sentence pitch
 
@@ -87,7 +87,7 @@ The [cheatsheet](cheatsheet.md) has the dozen shortcuts that are worth learning 
 ## After the workshop
 
 - Keep this repo as reference; every exercise is designed to be re-attempted.
-- Work through the self-study exercises in [`self-study/`](self-study/) on your own as you encounter the relevant work: Python debugging (04), notebooks (05), Fortran (06), IDL (07), LaTeX (09).
+- Work through the self-study exercises in [`self-study/`](self-study/) on your own as you encounter the relevant work: Python debugging (01), notebooks (02), Fortran (03), IDL (04), LaTeX (05).
 - Read [`self-study/adjacent-tools.md`](self-study/adjacent-tools.md) for the CLI tools (ruff, uv, fzf, tmux, …) that pair with VSCode.
 - Read [`self-study/ai-assistants.md`](self-study/ai-assistants.md) for the AI story — what the lab pays for, what CIRES users get free, BYO-key options.
 - Read [`self-study/customization.md`](self-study/customization.md) for emacs keymaps, profiles, settings sync.
