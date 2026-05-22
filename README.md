@@ -2,7 +2,7 @@
 
 Hands-on, in-person workshop to get the lab using **VSCode** for daily work: Fortran (TM5), IDL, legacy Python, Jupyter notebooks, instrument calibration, and LaTeX paper writing.
 
-If you've **never used VSCode before**, this workshop is for you. We start from "I just installed it, now what?" and end at "I can do my normal day in VSCode on my HPC server, and I never want to go back to PuTTY." Setup is the first 30 minutes — bring a laptop with nothing pre-installed, that's fine.
+If you've **never used VSCode before**, this workshop is for you. We assume you arrive with VSCode + the Remote-SSH extension installed (about 10 minutes of pre-arrival work — see [`pre-session.md`](pre-session.md), Part 1). The in-session hour is for the parts that actually need a live demo.
 
 ## What is VSCode?
 
@@ -21,60 +21,53 @@ What makes it relevant to a scientific lab:
 3. **It runs Jupyter notebooks inline**, with a variable explorer that shows array shapes and dtypes at a glance.
 4. **It has tens of thousands of extensions** — Fortran syntax, IDL syntax, LaTeX live preview, AI assistants, netCDF viewers — installable in one click.
 
-The workshop is structured so each block answers one question: *what does this thing do for me?* Each block has a hands-on exercise you do on your own machine while watching the live demo.
-
 ## What to bring
 
-- **Laptop** with admin rights to install software (no IT lockdown).
-- **Charger** — 2 hours is long enough that batteries fade.
+- **Laptop** with admin rights to install software.
+- **VSCode + Remote-SSH pre-installed.** See [`pre-session.md`](pre-session.md), Part 1 — about 10 minutes. Required.
 - **Your SSH credentials** for your HPC server (whatever you use today to log in from your terminal).
-- Optional: **VSCode pre-installed**, just to save 5 minutes during Block 0.
-
-You don't need to do anything else ahead of time. The first 30 minutes of the workshop are setup — we walk through it together. See [`pre-session.md`](pre-session.md) for what that 30 minutes will cover.
+- **Charger.**
 
 ## Repo layout
 ```
 .
 ├── README.md                # this file — the session script
-├── pre-session.md           # Block 0 setup walkthrough (in-session)
+├── pre-session.md           # Part 1 (homework) + Part 2 (Block 0 walkthrough)
 ├── cheatsheet.md            # one-page shortcut reference (print this)
 ├── extensions.txt           # `code --install-extension`-able list
 ├── settings.example.json    # sensible defaults for User Settings JSON
 ├── setup/                   # SSH config examples, verify.sh, troubleshooting, OOD walkthrough
 ├── exercises/               # hands-on exercise folders (01 through 10)
-│   ├── 01-navigation/       # F12 / Shift+F12 / F2 / multi-cursor
-│   ├── 02-search-replace/   # Cmd+Shift+F across the workspace
-│   ├── 03-git/              # visual hunk staging
-│   ├── 04-debugging/        # breakpoints, variable inspection
-│   ├── 05-jupyter/          # notebooks with variable explorer
-│   ├── 06-fortran/          # navigation in Fortran (self-study)
-│   ├── 07-idl/              # navigation in IDL (self-study)
-│   ├── 08-scientific-data/  # netCDF / HDF5 / CSV viewers (self-study)
-│   ├── 09-latex/            # LaTeX live preview (self-study)
-│   └── 10-ruff-magic/       # the "magic save" — ruff fixes the file on Cmd+S
+│   ├── 01-navigation/       # F12 / Shift+F12 / F2 / multi-cursor      (live)
+│   ├── 02-search-replace/   # Cmd+Shift+F across the workspace          (live)
+│   ├── 03-git/              # visual hunk staging                        (live)
+│   ├── 04-debugging/        # breakpoints, variable inspection           (self-study)
+│   ├── 05-jupyter/          # notebooks with variable explorer           (self-study)
+│   ├── 06-fortran/          # navigation in Fortran                      (self-study)
+│   ├── 07-idl/              # navigation in IDL                          (self-study)
+│   ├── 08-scientific-data/  # netCDF / HDF5 / CSV viewers                (self-study)
+│   ├── 09-latex/            # LaTeX live preview                         (self-study)
+│   └── 10-ruff-magic/       # the "magic save" — ruff fixes on Cmd+S    (live)
 └── self-study/              # reference material we won't cover live
     ├── adjacent-tools.md    # CLI tools worth knowing (ruff, uv, fzf, tmux…)
     ├── ai-assistants.md     # Gemini, Copilot, BYO-key in depth
     └── customization.md     # emacs keymap, profiles, settings sync
 ```
 
-## Session arc (2 hours)
+## Session arc (1 hour)
 
 | Time | Block | Exercise |
 |---|---|---|
-| 0:00–0:30 | **Block 0 — Setup together** — install VSCode + Remote-SSH, verify SSH from terminal, clone the workshop repo locally, run `verify.sh`, connect via Remote-SSH, clone the repo on the remote, confirm with `hostname`. Walk through [`pre-session.md`](pre-session.md) step-by-step on the projector. MSU users follow [`setup/msu-ood-walkthrough.md`](setup/msu-ood-walkthrough.md) in parallel with a designated helper. | — |
-| 0:30–0:40 | **First contact** — UI tour: file tree, editor, terminal, status bar, command palette as the M-x analog. Open the cheatsheet in preview to demonstrate Markdown rendering. | — |
-| 0:40–0:50 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [10](exercises/10-ruff-magic/) |
-| 0:50–1:05 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [01](exercises/01-navigation/), [02](exercises/02-search-replace/) |
-| 1:05–1:20 | **Git** — visual hunk staging, inline blame, branch switcher. | [03](exercises/03-git/) |
-| 1:20–1:35 | **Python daily workflow** — interpreter switcher, debugger, pytest gutter. | [04](exercises/04-debugging/) |
-| 1:35–1:45 | **Notebooks** — variable explorer, inline plots, cell git diffs. | [05](exercises/05-jupyter/) |
-| 1:45–1:55 | **HPC + AI (honest)** — what just happened with Remote-SSH, OpenOnDemand for MSU, Gemini vs Copilot Free vs CIRES eligibility. | — |
-| 1:55–2:00 | **Wrap** — cheatsheet, self-study pointers, Q&A. | — |
+| 0:00–0:15 | **Block 0 — Setup together** — verify SSH from terminal, clone the workshop repo locally, run `verify.sh`, connect via Remote-SSH, clone the repo on the remote, confirm with `hostname`. Walk through [`pre-session.md`](pre-session.md) Part 2 step-by-step on the projector. MSU users follow [`setup/msu-ood-walkthrough.md`](setup/msu-ood-walkthrough.md) in parallel with a designated helper. | — |
+| 0:15–0:20 | **First contact** — UI tour: file tree, editor, terminal, status bar, command palette as the M-x analog. | — |
+| 0:20–0:30 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [10](exercises/10-ruff-magic/) |
+| 0:30–0:45 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [01](exercises/01-navigation/), [02](exercises/02-search-replace/) |
+| 0:45–0:55 | **Git** — visual hunk staging, inline blame. | [03](exercises/03-git/) |
+| 0:55–1:00 | **Wrap** — cheatsheet, self-study pointers (debugger, notebooks, language-specific exercises, AI), Q&A. | — |
 
-Block 0 is real working time — installs and SSH first-connects take real minutes. Designating 1–2 **helpers** to walk around during Block 0 and triage broken SSH configs makes the difference between starting on time and starting 20 minutes late.
+Block 0 is real working time — SSH first-connects take real minutes. Designating 1–2 **helpers** to walk around during Block 0 and triage broken SSH configs makes the difference between starting on time and starting 15 minutes late.
 
-Exercises **06–09** (Fortran, IDL, scientific data, LaTeX) are **self-study**. The mechanics are the same as the live exercises; the languages and tools are different. Anyone working with those will want to re-do the exercise list on their own time.
+**Exercises 04, 05, 06–09** (debugger, notebooks, Fortran, IDL, scientific data, LaTeX) are **self-study**. They cover language- and tool-specific features in the same hands-on style as the live exercises, and anyone whose daily work involves those will want to re-do the list on their own time. The mechanics are the same; only the languages and tools change.
 
 ## The three-sentence pitch
 
@@ -95,6 +88,7 @@ The [cheatsheet](cheatsheet.md) has the dozen shortcuts that are worth learning 
 ## After the workshop
 
 - Keep this repo as reference; every exercise is designed to be re-attempted.
+- Work through exercises 04, 05, 06–09 on your own as you encounter the relevant work (Python debugging, notebooks, Fortran, IDL, scientific data, LaTeX).
 - Read [`self-study/adjacent-tools.md`](self-study/adjacent-tools.md) for the CLI tools (ruff, uv, fzf, tmux, …) that pair with VSCode.
 - Read [`self-study/ai-assistants.md`](self-study/ai-assistants.md) for the AI story — what the lab pays for, what CIRES users get free, BYO-key options.
 - Read [`self-study/customization.md`](self-study/customization.md) for emacs keymaps, profiles, settings sync.
