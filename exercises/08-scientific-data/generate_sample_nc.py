@@ -101,6 +101,30 @@ def main() -> None:
     print("Wrote sample.nc:")
     print(ds)
 
+    # Also write a PNG plot, so the workshop can demo VSCode's built-in
+    # image viewer over Remote-SSH (click the .png in the file tree and
+    # it renders in a tab — no scp needed).
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError:
+        print("\nmatplotlib not available; skipping PNG (pip install matplotlib to enable).")
+        return
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4), sharey=True)
+    for i, ch in enumerate(channels):
+        axes[0].hist(raw[:, i], bins=20, alpha=0.6, label=f"ch {ch}")
+        axes[1].hist(calibrated[:, i], bins=20, alpha=0.6, label=f"ch {ch}")
+    axes[0].set_title("Raw")
+    axes[1].set_title("Calibrated")
+    for ax in axes:
+        ax.set_xlabel("value")
+        ax.legend()
+    axes[0].set_ylabel("count")
+    fig.suptitle("Sample calibration data")
+    fig.tight_layout()
+    fig.savefig("sample_plot.png", dpi=120)
+    print("Wrote sample_plot.png")
+
 
 if __name__ == "__main__":
     main()

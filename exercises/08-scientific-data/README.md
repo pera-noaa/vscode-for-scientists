@@ -45,6 +45,16 @@ Install these extensions (in `extensions.txt`):
 ### 5. The same for HDF5
 - H5Web works the same way on `.h5` and `.hdf5` files. If you have any lying around on your HPC home dir, try one.
 
+### 6. View a PNG over SSH
+Scientists generate PNG plots constantly (matplotlib `savefig`). With VSCode + Remote-SSH, viewing them is one click:
+
+- After running `generate_sample_nc.py` (with `matplotlib` available) you also have `sample_plot.png` in the folder.
+- Click it in the file tree — VSCode renders the PNG in a tab.
+- That's it. No more `scp run42/plot.png laptop:/tmp/` and switching to a viewer.
+- It works the same for SVG (rendered inline) and PDF (via a PDF Preview extension).
+
+This is the "I just dumped a figure on the HPC and want to glance at it" workflow, collapsed to a single click.
+
 ## When to use what
 - **Rainbow CSV**: quick glance at structure, light filtering, sanity check that columns line up.
 - **Data Wrangler**: serious data exploration (filter chains, summary stats, "show me the rows where X > Y"). Generates pandas code you can paste into a notebook.
