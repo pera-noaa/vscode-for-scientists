@@ -45,7 +45,7 @@ What makes it relevant to a scientific lab:
 │   ├── 05-jupyter/          # notebooks with variable explorer           (self-study)
 │   ├── 06-fortran/          # navigation in Fortran                      (self-study)
 │   ├── 07-idl/              # navigation in IDL                          (self-study)
-│   ├── 08-scientific-data/  # netCDF / HDF5 / CSV viewers                (self-study)
+│   ├── 08-scientific-data/  # netCDF / HDF5 / CSV viewers                (live)
 │   ├── 09-latex/            # LaTeX live preview                         (self-study)
 │   └── 10-ruff-magic/       # the "magic save" — ruff fixes on Cmd+S    (live)
 └── self-study/              # reference material we won't cover live
@@ -54,7 +54,7 @@ What makes it relevant to a scientific lab:
     └── customization.md     # emacs keymap, profiles, settings sync
 ```
 
-## Session arc (1 hour)
+## Session arc (70 minutes)
 
 | Time | Block | Exercise |
 |---|---|---|
@@ -63,11 +63,12 @@ What makes it relevant to a scientific lab:
 | 0:20–0:30 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [10](exercises/10-ruff-magic/) |
 | 0:30–0:45 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [01](exercises/01-navigation/), [02](exercises/02-search-replace/) |
 | 0:45–0:55 | **Git** — visual hunk staging, inline blame. | [03](exercises/03-git/) |
-| 0:55–1:00 | **Wrap** — cheatsheet, self-study pointers (debugger, notebooks, language-specific exercises, AI), Q&A. | — |
+| 0:55–1:05 | **Scientific data** — open a CSV with Rainbow CSV, open a netCDF with H5Web (graphical browser inside the editor). Replaces `ncdump \| less` for the everyday "what's in this file?" check. | [08](exercises/08-scientific-data/) |
+| 1:05–1:10 | **Wrap** — cheatsheet, self-study pointers (debugger, notebooks, Fortran, IDL, LaTeX, AI), Q&A. | — |
 
 Block 0 is real working time — SSH first-connects take real minutes. Designating 1–2 **helpers** to walk around during Block 0 and triage broken SSH configs makes the difference between starting on time and starting 15 minutes late.
 
-**Exercises 04, 05, 06–09** (debugger, notebooks, Fortran, IDL, scientific data, LaTeX) are **self-study**. They cover language- and tool-specific features in the same hands-on style as the live exercises, and anyone whose daily work involves those will want to re-do the list on their own time. The mechanics are the same; only the languages and tools change.
+**Exercises 04, 05, 06, 07, 09** (debugger, notebooks, Fortran, IDL, LaTeX) are **self-study**. They cover language- and tool-specific features in the same hands-on style as the live exercises, and anyone whose daily work involves those will want to re-do the list on their own time. The mechanics are the same; only the languages and tools change.
 
 ## The three-sentence pitch
 
@@ -88,7 +89,7 @@ The [cheatsheet](cheatsheet.md) has the dozen shortcuts that are worth learning 
 ## After the workshop
 
 - Keep this repo as reference; every exercise is designed to be re-attempted.
-- Work through exercises 04, 05, 06–09 on your own as you encounter the relevant work (Python debugging, notebooks, Fortran, IDL, scientific data, LaTeX).
+- Work through exercises 04, 05, 06, 07, 09 on your own as you encounter the relevant work (Python debugging, notebooks, Fortran, IDL, LaTeX).
 - Read [`self-study/adjacent-tools.md`](self-study/adjacent-tools.md) for the CLI tools (ruff, uv, fzf, tmux, …) that pair with VSCode.
 - Read [`self-study/ai-assistants.md`](self-study/ai-assistants.md) for the AI story — what the lab pays for, what CIRES users get free, BYO-key options.
 - Read [`self-study/customization.md`](self-study/customization.md) for emacs keymaps, profiles, settings sync.
