@@ -2,7 +2,7 @@
 
 Hands-on, in-person workshop to get the lab using **VSCode** for daily work: Fortran (TM5), IDL, legacy Python, Jupyter notebooks, instrument calibration, and LaTeX paper writing.
 
-If you've **never used VSCode before**, this workshop is for you. We start from "I just installed it, now what?" and end at "I can do my normal day in VSCode on my HPC server, and I never want to go back to PuTTY."
+If you've **never used VSCode before**, this workshop is for you. We start from "I just installed it, now what?" and end at "I can do my normal day in VSCode on my HPC server, and I never want to go back to PuTTY." Setup is the first 30 minutes — bring a laptop with nothing pre-installed, that's fine.
 
 ## What is VSCode?
 
@@ -23,17 +23,20 @@ What makes it relevant to a scientific lab:
 
 The workshop is structured so each block answers one question: *what does this thing do for me?* Each block has a hands-on exercise you do on your own machine while watching the live demo.
 
-## Before the workshop
+## What to bring
 
-**Complete [`pre-session.md`](pre-session.md) at least 24 hours ahead.** It walks you through installing VSCode, getting Remote-SSH working with your server, and cloning this repo to that server. The first 10 minutes of the in-person session are for SSH verification, not setup — if your SSH isn't working when you walk in, you'll fall behind.
+- **Laptop** with admin rights to install software (no IT lockdown).
+- **Charger** — 2 hours is long enough that batteries fade.
+- **Your SSH credentials** for your HPC server (whatever you use today to log in from your terminal).
+- Optional: **VSCode pre-installed**, just to save 5 minutes during Block 0.
 
-If you hit snags, post in the workshop channel. The earlier we triage, the smoother the session.
+You don't need to do anything else ahead of time. The first 30 minutes of the workshop are setup — we walk through it together. See [`pre-session.md`](pre-session.md) for what that 30 minutes will cover.
 
 ## Repo layout
 ```
 .
 ├── README.md                # this file — the session script
-├── pre-session.md           # homework checklist
+├── pre-session.md           # Block 0 setup walkthrough (in-session)
 ├── cheatsheet.md            # one-page shortcut reference (print this)
 ├── extensions.txt           # `code --install-extension`-able list
 ├── settings.example.json    # sensible defaults for User Settings JSON
@@ -55,18 +58,21 @@ If you hit snags, post in the workshop channel. The earlier we triage, the smoot
     └── customization.md     # emacs keymap, profiles, settings sync
 ```
 
-## Session arc (90 minutes)
+## Session arc (2 hours)
 
 | Time | Block | Exercise |
 |---|---|---|
-| 0:00–0:10 | **First contact** — everyone connects to their server. UI tour: file tree, editor, terminal, status bar, command palette as the M-x analog. We run `hostname` in the terminal to confirm we're on the cluster. | — |
-| 0:10–0:20 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [10](exercises/10-ruff-magic/) |
-| 0:20–0:35 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [01](exercises/01-navigation/), [02](exercises/02-search-replace/) |
-| 0:35–0:50 | **Git** — visual hunk staging, inline blame, branch switcher. | [03](exercises/03-git/) |
-| 0:50–1:05 | **Python daily workflow** — interpreter switcher, debugger, pytest gutter. | [04](exercises/04-debugging/) |
-| 1:05–1:15 | **Notebooks** — variable explorer, inline plots, cell git diffs. | [05](exercises/05-jupyter/) |
-| 1:15–1:25 | **HPC + AI (honest)** — what just happened with Remote-SSH, OpenOnDemand for MSU, Gemini vs Copilot Free vs CIRES eligibility. | — |
-| 1:25–1:30 | **Wrap** — cheatsheet, self-study pointers, Q&A. | — |
+| 0:00–0:30 | **Block 0 — Setup together** — install VSCode + Remote-SSH, verify SSH from terminal, clone the workshop repo locally, run `verify.sh`, connect via Remote-SSH, clone the repo on the remote, confirm with `hostname`. Walk through [`pre-session.md`](pre-session.md) step-by-step on the projector. MSU users follow [`setup/msu-ood-walkthrough.md`](setup/msu-ood-walkthrough.md) in parallel with a designated helper. | — |
+| 0:30–0:40 | **First contact** — UI tour: file tree, editor, terminal, status bar, command palette as the M-x analog. Open the cheatsheet in preview to demonstrate Markdown rendering. | — |
+| 0:40–0:50 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [10](exercises/10-ruff-magic/) |
+| 0:50–1:05 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [01](exercises/01-navigation/), [02](exercises/02-search-replace/) |
+| 1:05–1:20 | **Git** — visual hunk staging, inline blame, branch switcher. | [03](exercises/03-git/) |
+| 1:20–1:35 | **Python daily workflow** — interpreter switcher, debugger, pytest gutter. | [04](exercises/04-debugging/) |
+| 1:35–1:45 | **Notebooks** — variable explorer, inline plots, cell git diffs. | [05](exercises/05-jupyter/) |
+| 1:45–1:55 | **HPC + AI (honest)** — what just happened with Remote-SSH, OpenOnDemand for MSU, Gemini vs Copilot Free vs CIRES eligibility. | — |
+| 1:55–2:00 | **Wrap** — cheatsheet, self-study pointers, Q&A. | — |
+
+Block 0 is real working time — installs and SSH first-connects take real minutes. Designating 1–2 **helpers** to walk around during Block 0 and triage broken SSH configs makes the difference between starting on time and starting 20 minutes late.
 
 Exercises **06–09** (Fortran, IDL, scientific data, LaTeX) are **self-study**. The mechanics are the same as the live exercises; the languages and tools are different. Anyone working with those will want to re-do the exercise list on their own time.
 

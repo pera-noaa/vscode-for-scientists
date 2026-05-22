@@ -1,8 +1,15 @@
-# Pre-Session Setup
+# Block 0 — Setup Walkthrough
 
-Complete this **at least 24 hours before the workshop**. The first 10 minutes of the in-person session are for SSH verification, not setup — if your SSH isn't working when you walk in, you'll fall behind.
+This is the script for the first 30 minutes of the workshop. The instructor walks through each step on the projector; you follow along on your laptop. **Don't try to do this ahead of time** — we want everyone at the same place when the editor demos start, and live setup is also useful content (it's how you'd onboard a new lab member).
 
-Estimated time: 15 minutes if everything works, 30+ minutes if you hit snags. **If you hit snags, post in the workshop channel early so we can triage before the session.**
+If you really want to save time, you can pre-install VSCode (step 1) and the Remote-SSH extension (step 2). Everything else we do together. Coming with nothing pre-installed is fine.
+
+## What to bring
+
+- **Laptop** with admin rights to install software.
+- **Charger** — 2 hours is long enough that batteries fade.
+- **Your SSH credentials** for your HPC server (you log in to `nimbus` or wherever from your terminal at least sometimes — bring whatever password/Duo/key setup you normally use).
+- A **GitHub account** is nice for cloning over HTTPS without prompting, but not required for the public workshop repo.
 
 ## 1. Install VSCode
 Download from https://code.visualstudio.com/ and install. Then enable the `code` CLI:
@@ -29,7 +36,7 @@ ssh <yourserver> echo "ok from $(hostname)"
 
 Replace `<yourserver>` with whatever host you use day-to-day (`nimbus`, etc.). If you see `ok from <yourserver>`, you're good.
 
-If you see an error, see [`setup/troubleshooting.md`](setup/troubleshooting.md). Common culprits: not on the VPN, missing `~/.ssh/config` entry, wrong key permissions.
+If you see an error, flag a helper. Common culprits: not on the VPN, missing `~/.ssh/config` entry, wrong key permissions. See [`setup/troubleshooting.md`](setup/troubleshooting.md).
 
 ## 4. Clone the workshop repo to your laptop
 Pick a place on your laptop and clone:
@@ -47,9 +54,9 @@ From your laptop terminal:
 cd ~/vscode-workshop && ./setup/verify.sh
 ```
 
-The script checks: VSCode CLI on PATH, ssh client, ssh-agent, ssh config, Remote-SSH extension installed, and a live SSH connection to a host you specify. **Wait until it says "ready" before moving on.**
+The script checks: VSCode CLI on PATH, ssh client, ssh-agent, ssh config, Remote-SSH extension installed, and a live SSH connection to a host you specify. Everyone should see "ready" before we move on.
 
-If the script reports failures, fix them and re-run. The whole flow downstream depends on these working.
+If you don't, the helpers will come over and triage.
 
 ## 6. Connect with VSCode
 - Cmd+Shift+P → "Remote-SSH: Connect to Host" → pick your server.
@@ -64,17 +71,22 @@ git clone https://github.com/pera-noaa/vscode-for-scientists.git ~/vscode-worksh
 
 Then File → Open Folder → `~/vscode-workshop` (on the remote).
 
-## 8. Post status in the workshop channel
-- ✅ "Setup complete on `<server>`" — you're ready.
-- ❌ Paste your error message and someone will help triage before the session.
+## 8. Confirm you're on the cluster
+In the integrated terminal:
+
+```
+hostname
+```
+
+If it returns your HPC server's name (and not your laptop's), you're done with Block 0. The rest of the workshop happens on that remote, with all the navigation/git/notebook features working on real files on your real cluster.
 
 ---
 
 ## MSU Orion / Hercules users
-MSU forbids Remote-SSH; use OpenOnDemand instead. The flow is different from the standard path above.
+MSU forbids Remote-SSH; use OpenOnDemand instead. A helper will sit with you in parallel during Block 0 — you'll follow the flow below while the rest of the room does steps 2–7 above.
 
 You still need:
-- **Step 1**: VSCode installed locally (for browsing this repo on your laptop).
+- **Step 1** above: VSCode installed locally (for browsing this repo on your laptop after the workshop).
 
 You don't need:
 - The Remote-SSH extension (step 2).
@@ -84,13 +96,13 @@ Instead, do this:
 
 1. Visit https://orion-ood.hpc.msstate.edu.
 2. Log in with your MSU HPC credentials.
-3. Launch a **Code Server** interactive job (4 hours walltime, modest CPU/RAM is fine).
+3. Launch a **Code Server** interactive job (3 hours walltime, modest CPU/RAM is fine — the workshop fits in one session).
 4. When the job starts, click "Connect" to open browser-based VSCode.
 5. Open a terminal in that VSCode (Ctrl+\`) and clone the workshop repo:
    ```
    git clone https://github.com/pera-noaa/vscode-for-scientists.git ~/vscode-workshop
    ```
 6. Open the folder via the VSCode UI: File → Open Folder → `~/vscode-workshop`.
-7. Post status in the workshop channel.
+7. Run `hostname` in the terminal — it should return a compute node name, confirming you're on the cluster.
 
-See [`setup/msu-ood-walkthrough.md`](setup/msu-ood-walkthrough.md) for the full walkthrough.
+See [`setup/msu-ood-walkthrough.md`](setup/msu-ood-walkthrough.md) for the full walkthrough with screenshots.
