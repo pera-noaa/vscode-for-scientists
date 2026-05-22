@@ -45,7 +45,7 @@ The shortcuts in this list are the ones worth memorizing first. If you can descr
 | `Cmd+Shift+F` | Find across the workspace |
 | `Cmd+Shift+H` | Find and replace across the workspace |
 
-## Git (Source Control panel = `Cmd+Shift+G`)
+## Git (Source Control panel = `Ctrl+Shift+G`)
 | Action | Where |
 |---|---|
 | Stage a hunk | Click `+` in the diff gutter |

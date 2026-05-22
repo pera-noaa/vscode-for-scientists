@@ -2,7 +2,7 @@
 
 Goal: stop print-statement-debugging. Use a breakpoint and the Variables panel.
 
-You'll work with `buggy_calibration.py`, a small script with a planted bug. It runs, but the reported mean is wrong.
+You'll work with `buggy_calibration.py`, a small script with a planted bug somewhere. It runs without error, but the reported mean is wrong (it prints the expected value at the bottom — they don't match).
 
 ## Setup
 - Open `exercises/04-debugging/buggy_calibration.py`.
@@ -12,32 +12,27 @@ You'll work with `buggy_calibration.py`, a small script with a planted bug. It r
 
 ### 1. Run it once and see the wrong answer
 - Right-click in the editor → "Run Python File in Terminal."
-- The script prints a calibrated mean. The value is wrong.
+- The script prints a calibrated mean and the expected value. They don't match.
 
-### 2. Set a breakpoint
-- Click in the gutter to the left of the `return` statement inside `compute_mean`. A red dot appears.
+### 2. Find the bug with the debugger
+The bug is small. Don't read the code first — use the debugger to find it.
 
-### 3. Launch the debugger
-- Press **F5**.
-- VSCode asks for a debug config the first time — pick "Python File."
+- Click in the gutter to the left of any `return` statement in the file. A red dot appears — that's a breakpoint.
+- Press **F5**. VSCode asks for a debug config the first time — pick "Python File."
 - Execution pauses at your breakpoint. The current line is highlighted.
 
-### 4. Read the world
+### 3. Read the world
 - Look at the **Variables** panel (left sidebar, top).
-- You see `values` (the list passed in) and local variables.
-- Expand `values` — read each element.
+- Expand any local variables — read what's in them.
 
-### 5. Hover-evaluate
-- Hover your mouse over `values` in the code. A tooltip shows the current value.
-- Hover over `values[1:]` — see what gets summed.
-- Hover over `sum(values[1:])` — VSCode evaluates the expression.
+### 4. Hover-evaluate
+- Hover your mouse over any expression in the code. A tooltip shows its current value.
+- Try hovering over slices, function arguments, anything that looks suspicious.
 
-### 6. Use the Debug Console
-- Look at the bottom panel — there's a **Debug Console** tab.
-- Type `sum(values)` and Enter — get the full sum.
-- Type `sum(values[1:])` — get the buggy sum.
-- Type `len(values)` — get the divisor.
-- Compare: the bug is now visible.
+### 5. Use the Debug Console
+- Bottom panel → **Debug Console** tab.
+- Type any Python expression and Enter — it evaluates in the paused frame.
+- This is where you compare what *should* equal what — `sum(values)` vs `sum(values[1:])`, `len(x)` vs the divisor in a mean, etc.
 
 ### 7. Step through (optional)
 - Disable the breakpoint and step from earlier in the program with **F10** (step over) or **F11** (step into).

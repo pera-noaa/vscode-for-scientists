@@ -33,8 +33,6 @@ def calibrate(channel: int, raw: float) -> float:
 
 def compute_mean(values: list[float]) -> float:
     """Return the arithmetic mean of `values`."""
-    # The bug is in this function. Set a breakpoint on the return line
-    # and check sum(values), sum(values[1:]), len(values) in the Debug Console.
     return sum(values[1:]) / len(values)
 
 
@@ -43,7 +41,7 @@ def main() -> None:
     mean = compute_mean(calibrated)
     print(f"Calibrated values: {calibrated}")
     print(f"Calibrated mean:   {mean:.3f}")
-    print(f"(Expected ~8.95 once the bug is fixed.)")
+    print(f"(Expected ~8.88 once the bug is fixed.)")
 
 
 if __name__ == "__main__":
