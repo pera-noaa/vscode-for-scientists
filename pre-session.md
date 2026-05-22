@@ -40,7 +40,7 @@ Before involving VSCode, confirm plain SSH works from your terminal:
 ssh <yourserver> echo "ok from $(hostname)"
 ```
 
-Replace `<yourserver>` with whatever host you use day-to-day (`nimbus`, etc.). If you see `ok from <yourserver>`, you're good. If not, flag a helper. Common culprits: not on the VPN, missing `~/.ssh/config` entry, wrong key permissions. See [`setup/troubleshooting.md`](setup/troubleshooting.md).
+Replace `<yourserver>` with whatever host you use day-to-day (`nimbus`, etc.). If you see `ok from <yourserver>`, you're good. If not, see [`setup/troubleshooting.md`](setup/troubleshooting.md). Common culprits: not on the VPN, missing `~/.ssh/config` entry, wrong key permissions.
 
 ### 4. Clone the workshop repo to your laptop
 Pick a place on your laptop and clone:
@@ -85,7 +85,7 @@ If it returns your HPC server's name (and not your laptop's), Block 0 is done. T
 ---
 
 ## MSU Orion / Hercules users
-MSU forbids Remote-SSH; use OpenOnDemand instead. A helper sits with you in parallel during Block 0 — you'll follow the flow below while the rest of the room does steps 3–8 above.
+MSU forbids Remote-SSH; use OpenOnDemand instead. You'll follow the flow below during Block 0 while the rest of the room does steps 3–8 above.
 
 You still need:
 - **Part 1, step 1** above: VSCode installed locally (for browsing this repo on your laptop after the workshop).

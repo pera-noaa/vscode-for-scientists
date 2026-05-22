@@ -58,15 +58,13 @@ What makes it relevant to a scientific lab:
 
 | Time | Block | Exercise |
 |---|---|---|
-| 0:00–0:15 | **Block 0 — Setup together** — verify SSH from terminal, clone the workshop repo locally, run `verify.sh`, connect via Remote-SSH, clone the repo on the remote, confirm with `hostname`. Walk through [`pre-session.md`](pre-session.md) Part 2 step-by-step on the projector. MSU users follow [`setup/msu-ood-walkthrough.md`](setup/msu-ood-walkthrough.md) in parallel with a designated helper. | — |
+| 0:00–0:15 | **Block 0 — Setup together** — verify SSH from terminal, clone the workshop repo locally, run `verify.sh`, connect via Remote-SSH, clone the repo on the remote, confirm with `hostname`. Walk through [`pre-session.md`](pre-session.md) Part 2 step-by-step on the projector. MSU users follow [`setup/msu-ood-walkthrough.md`](setup/msu-ood-walkthrough.md) in parallel. | — |
 | 0:15–0:20 | **First contact** — UI tour: file tree, editor, terminal (Ctrl+\` — already on the remote you just connected to; `ls` shows your HPC home, `hostname` confirms it), status bar, command palette as the M-x analog. The "this is what replaces PuTTY" moment. | — |
 | 0:20–0:30 | **The magic save** — open `messy.py`, hit Cmd+S, watch ruff clean up unsorted imports, deprecated numpy aliases, `== None`, whitespace, all at once. The "good defaults already exist" pitch made concrete. | [10](exercises/10-ruff-magic/) |
 | 0:30–0:45 | **Editor superpowers** — F12, Shift+F12, F2, multi-cursor, Cmd+Shift+F across the workspace. The "navigation that respects your codebase" pitch. | [01](exercises/01-navigation/), [02](exercises/02-search-replace/) |
 | 0:45–0:55 | **Scientific data** — open a CSV with Rainbow CSV, open a netCDF with H5Web (graphical browser inside the editor), click on a PNG sitting on the HPC and watch it render in a tab — no `scp` needed. Replaces `ncdump \| less` and the "copy plot to laptop to look at it" workflow. | [08](exercises/08-scientific-data/) |
 | 0:55–1:05 | **Git** — visual hunk staging, inline blame. | [03](exercises/03-git/) |
 | 1:05–1:10 | **Wrap** — cheatsheet, self-study pointers (debugger, notebooks, Fortran, IDL, LaTeX, AI), Q&A. | — |
-
-Block 0 is real working time — SSH first-connects take real minutes. Designating 1–2 **helpers** to walk around during Block 0 and triage broken SSH configs makes the difference between starting on time and starting 15 minutes late.
 
 **Exercises 04, 05, 06, 07, 09** (debugger, notebooks, Fortran, IDL, LaTeX) are **self-study**. They cover language- and tool-specific features in the same hands-on style as the live exercises, and anyone whose daily work involves those will want to re-do the list on their own time. The mechanics are the same; only the languages and tools change.
 
