@@ -37,15 +37,15 @@ What makes it relevant to a scientific lab:
 ├── extensions.txt           # `code --install-extension`-able list
 ├── settings.example.json    # sensible defaults for User Settings JSON
 ├── setup/                   # SSH config examples, verify.sh, troubleshooting, OOD walkthrough
-├── exercises/               # hands-on exercises done in the session
-│   ├── 01-navigation/       # F12 / Shift+F12 / F2 / multi-cursor      (live)
-│   ├── 02-search-replace/   # Cmd+Shift+F across the workspace          (live)
-│   ├── 03-git/              # visual hunk staging                        (live)
-│   ├── 04-debugging/        # breakpoints, variable inspection           (self-study)
-│   ├── 05-jupyter/          # notebooks with variable explorer           (self-study)
-│   ├── 08-scientific-data/  # netCDF / HDF5 / CSV viewers                (live)
-│   └── 10-ruff-magic/       # the "magic save" — ruff fixes on Cmd+S    (live)
-└── self-study/              # language/format-specific exercises + reference docs
+├── exercises/               # hands-on exercises done in the live session
+│   ├── 01-navigation/       # F12 / Shift+F12 / F2 / multi-cursor
+│   ├── 02-search-replace/   # Cmd+Shift+F across the workspace
+│   ├── 03-git/              # visual hunk staging
+│   ├── 08-scientific-data/  # netCDF / HDF5 / CSV viewers
+│   └── 10-ruff-magic/       # the "magic save" — ruff fixes on Cmd+S
+└── self-study/              # take-home exercises and reference docs
+    ├── 04-debugging/        # breakpoints, variable inspection (Python)
+    ├── 05-jupyter/          # notebooks with variable explorer
     ├── 06-fortran/          # navigation in Fortran
     ├── 07-idl/              # navigation in IDL
     ├── 09-latex/            # LaTeX live preview
@@ -66,7 +66,7 @@ What makes it relevant to a scientific lab:
 | 0:55–1:05 | **Git** — visual hunk staging, inline blame. | [03](exercises/03-git/) |
 | 1:05–1:10 | **Wrap** — cheatsheet, self-study pointers (debugger, notebooks, Fortran, IDL, LaTeX, AI), Q&A. | — |
 
-**Self-study exercises:** debugger (`exercises/04-debugging/`) and notebooks (`exercises/05-jupyter/`) extend the live arc with Python-daily features that wouldn't fit in 70 minutes. Fortran (`self-study/06-fortran/`), IDL (`self-study/07-idl/`), and LaTeX (`self-study/09-latex/`) are language- and format-specific re-runs of the navigation and preview exercises — anyone whose daily work involves those will want to do them on their own time. The mechanics are the same; only the languages and tools change.
+**Self-study exercises** all live under [`self-study/`](self-study/). Debugger (04) and notebooks (05) extend the live arc with Python-daily features that wouldn't fit in 70 minutes. Fortran (06), IDL (07), and LaTeX (09) are language- and format-specific re-runs of the navigation and preview exercises — anyone whose daily work involves those will want to do them on their own time. The mechanics are the same; only the languages and tools change.
 
 ## The three-sentence pitch
 
@@ -87,7 +87,7 @@ The [cheatsheet](cheatsheet.md) has the dozen shortcuts that are worth learning 
 ## After the workshop
 
 - Keep this repo as reference; every exercise is designed to be re-attempted.
-- Work through the self-study exercises on your own as you encounter the relevant work: Python debugging (`exercises/04-debugging/`), notebooks (`exercises/05-jupyter/`), Fortran (`self-study/06-fortran/`), IDL (`self-study/07-idl/`), LaTeX (`self-study/09-latex/`).
+- Work through the self-study exercises in [`self-study/`](self-study/) on your own as you encounter the relevant work: Python debugging (04), notebooks (05), Fortran (06), IDL (07), LaTeX (09).
 - Read [`self-study/adjacent-tools.md`](self-study/adjacent-tools.md) for the CLI tools (ruff, uv, fzf, tmux, …) that pair with VSCode.
 - Read [`self-study/ai-assistants.md`](self-study/ai-assistants.md) for the AI story — what the lab pays for, what CIRES users get free, BYO-key options.
 - Read [`self-study/customization.md`](self-study/customization.md) for emacs keymaps, profiles, settings sync.
