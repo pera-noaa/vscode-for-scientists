@@ -1,6 +1,6 @@
 # Exercise 08 — Viewing Scientific Data
 
-Goal: read CSV, netCDF, and HDF5 without leaving the editor or writing throwaway code.
+Goal: load → inspect → visualize scientific data without leaving the editor or writing throwaway code. The full loop — raw CSV, structured netCDF, and the rendered plot — happens inside one VSCode window, on the HPC.
 
 ## Setup
 Install these extensions (in `extensions.txt`):
@@ -10,7 +10,7 @@ Install these extensions (in `extensions.txt`):
 
 ## Files
 - `calibration_data.csv` — one hour of synthetic per-channel calibration observations (timestamp, channel, raw, calibrated, flag).
-- `generate_sample_nc.py` — small script that writes `sample.nc` for the netCDF viewer exercise. Run it to create the file.
+- `generate_sample_nc.py` — script that writes BOTH `sample.nc` (the data) and `sample_plot.png` (a histogram of the same data) when you run it.
 
 ## Exercises
 
@@ -24,41 +24,43 @@ Install these extensions (in `extensions.txt`):
 - Right-click `calibration_data.csv` in the file tree → "Open in Data Wrangler."
 - Excel-like view with filter, sort, summary statistics, and a "generate cleaning code" panel that writes pandas code for you.
 
-### 3. Plot CSV inline with Rainbow CSV
+### 3. Query the CSV with Rainbow CSV's RBQL
 - With the CSV open, right-click → "Rainbow CSV: Run RBQL Query."
 - Try a SQL-like query: `SELECT a1, a3, a4 WHERE a2 = '1' LIMIT 20` (timestamp, raw, calibrated for channel 1).
 - Results appear in a new tab.
 
-### 4. Generate a netCDF and view it with H5Web
+### 4. Generate a netCDF and its visualization
 - Open the integrated terminal (Ctrl+\`).
 - Run:
   ```
   python generate_sample_nc.py
   ```
-  (Needs `numpy` and `xarray` — `pip install numpy xarray netcdf4` if missing.)
-- `sample.nc` appears in the folder.
+  (Needs `numpy`, `xarray`, `netcdf4`, and `matplotlib` — `pip install` if missing.)
+- Two files appear in the folder:
+  - `sample.nc` — a CF-compliant netCDF with raw + calibrated observations, coordinates, attributes, and quality flags.
+  - `sample_plot.png` — histograms of the same data, raw vs calibrated, per channel.
+
+### 5. Browse the netCDF structure with H5Web
 - Click `sample.nc` in the file tree → H5Web opens it as a tab.
-- Browse the group hierarchy on the left.
-- Click a variable → see metadata, attributes, and an inline plot or heatmap.
+- Browse the group hierarchy on the left: variables, dimensions, attributes.
+- Click a variable → see its metadata and an inline plot or heatmap.
 - Filter by dimension; export PNG.
 
-### 5. The same for HDF5
-- H5Web works the same way on `.h5` and `.hdf5` files. If you have any lying around on your HPC home dir, try one.
+### 6. View the plot of that same data
+- Click `sample_plot.png` in the file tree → it renders in a tab.
+- This is the *same data* you just browsed in H5Web, plotted as histograms. The whole load-inspect-visualize loop happened in one window, on the HPC.
+- Replaces the `scp /work/plots/run42.png laptop:/tmp/` workflow — the file lives on the cluster and you just look at it.
+- Works the same for **SVG** (rendered inline) and **PDF** (via a PDF Preview extension).
 
-### 6. View a PNG over SSH
-Scientists generate PNG plots constantly (matplotlib `savefig`). With VSCode + Remote-SSH, viewing them is one click:
-
-- After running `generate_sample_nc.py` (with `matplotlib` available) you also have `sample_plot.png` in the folder.
-- Click it in the file tree — VSCode renders the PNG in a tab.
-- That's it. No more `scp run42/plot.png laptop:/tmp/` and switching to a viewer.
-- It works the same for SVG (rendered inline) and PDF (via a PDF Preview extension).
-
-This is the "I just dumped a figure on the HPC and want to glance at it" workflow, collapsed to a single click.
+### 7. Bonus: HDF5 and other formats
+- H5Web also works on `.h5` and `.hdf5` files. If you have any lying around on your HPC home dir, try one.
+- The PNG / SVG / PDF viewing applies to any plot or figure file your scripts dump.
 
 ## When to use what
 - **Rainbow CSV**: quick glance at structure, light filtering, sanity check that columns line up.
 - **Data Wrangler**: serious data exploration (filter chains, summary stats, "show me the rows where X > Y"). Generates pandas code you can paste into a notebook.
 - **H5Web**: anything netCDF / HDF5. Replaces `ncdump | less` and `ncview` for a quick visual check.
+- **Built-in image viewer**: click any `.png`, `.svg`, `.jpg`, `.gif` and it renders. PDF needs an extension. Replaces "scp to laptop then open."
 - **Notebook (exercise 05)**: when you need full numpy / xarray analysis and plotting in code.
 
 ## Tips
