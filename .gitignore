@@ -2,7 +2,7 @@
 .DS_Store
 
 # Editor working files
-.vscode/
+/.vscode/
 *.swp
 *.swo
 

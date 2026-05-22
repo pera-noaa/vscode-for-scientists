@@ -1,0 +1,16 @@
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes — unused imports, unused vars
+    "I",     # isort — import sorting
+    "UP",    # pyupgrade — modernize syntax
+    "NPY",   # numpy-specific (deprecation, numpy 2 compat)
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
