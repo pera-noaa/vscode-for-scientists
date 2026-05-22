@@ -14,7 +14,7 @@ You'll work with a tiny three-file Python package that simulates an instrument-c
 ### 1. Jump to definition (F12)
 - Open `main.py`.
 - Find the call to `apply_calibration` inside `main()` (near the bottom of the file). Put your cursor on the name.
-- Press **F12**. You land in `calibration.py`.
+- Press **F12** (or just **Cmd** click!). You land in `calibration.py`.
 - Press **Ctrl+-** (or **Opt+Cmd+Left** on macOS) to jump back to `main.py`.
 
 ### 2. Peek definition (Opt+F12)
