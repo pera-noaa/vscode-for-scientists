@@ -46,7 +46,7 @@ You'll search across a small mixed-content tree containing Python, YAML, Markdow
 ### 6. Find a hardcoded path with regex
 - Enable regex.
 - Search for: `/home/old_user/[a-z_]+`
-- See every hardcoded path that follows that pattern. Try a replace to `/work/${USER}/`.
+- See every hardcoded path that follows that pattern. Try a replace to `/work/${USER}`.
 
 ### 7. Search by symbol type — bonus
 - **Cmd+T** opens workspace-wide symbol search (functions, classes).
