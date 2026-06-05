@@ -96,7 +96,7 @@ You don't need:
 
 Instead, do this (also during Block 0):
 
-1. Visit https://orion-ood.hpc.msstate.edu.
+1. Visit https://orion-ood.hpc.msstate.edu or https://hercules-ood.hpc.msstate.edu.
 2. Log in with your MSU HPC credentials.
 3. Launch a **Code Server** interactive job (2 hours walltime, modest CPU/RAM is fine — the workshop fits in one session with margin).
 4. When the job starts, click "Connect" to open browser-based VSCode.
